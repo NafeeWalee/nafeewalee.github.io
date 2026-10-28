@@ -1,0 +1,1788 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta name="description" content="Nafeeul Alam Walee — PhD Student in Applied Computing at Georgia Southern University. AI Researcher, Educator & Software Engineer."/>
+  <title>Nafeeul Alam Walee — Academic &amp; Engineering Portfolio</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <!-- Google Fonts & Icons -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#00645e",
+            "primary-container": "#087f78",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#d9fffa",
+            "primary-fixed": "#95f3ea",
+            "primary-fixed-dim": "#78d6ce",
+            "secondary": "#52606e",
+            "secondary-container": "#d5e4f5",
+            "on-secondary-container": "#586674",
+            "tertiary": "#4c5b64",
+            "background": "#f9faf7",
+            "surface": "#f9faf7",
+            "surface-dim": "#d9dad8",
+            "surface-bright": "#f9faf7",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f3f4f1",
+            "surface-container": "#edeeeb",
+            "surface-container-high": "#e7e8e6",
+            "surface-container-highest": "#e2e3e0",
+            "on-surface": "#191c1b",
+            "on-surface-variant": "#3e4947",
+            "outline": "#6e7978",
+            "outline-variant": "#bdc9c7"
+          },
+          fontFamily: {
+            display: ["Playfair Display", "serif"],
+            "body-md": ["Manrope", "sans-serif"],
+            "body-lg": ["Manrope", "sans-serif"],
+            "headline-lg": ["Playfair Display", "serif"],
+            "headline-md": ["Manrope", "sans-serif"],
+            "headline-sm": ["Manrope", "sans-serif"],
+            "label-code": ["JetBrains Mono", "monospace"],
+            "label-technical": ["JetBrains Mono", "monospace"]
+          },
+          spacing: {
+            "margin": "1rem",
+            "margin-tablet": "2rem",
+            "margin-desktop": "4rem",
+            "gutter": "1.5rem",
+            "gutter-desktop": "2rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2.5rem",
+            "space-2xl": "4rem",
+            "space-3xl": "6rem"
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Animation & Custom Interactive Styles -->
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f3f4f1;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #00645e44;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #00645e88;
+    }
+
+    /* Keyframe Animations */
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.35; transform: scale(1); }
+      50% { opacity: 0.95; transform: scale(1.08); }
+    }
+
+    @keyframes circuitFlow {
+      0% { stroke-dashoffset: 24; }
+      100% { stroke-dashoffset: 0; }
+    }
+
+    @keyframes subtleFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .animate-glow {
+      animation: pulseGlow 3s ease-in-out infinite;
+    }
+
+    .animate-float {
+      animation: subtleFloat 6s ease-in-out infinite;
+    }
+
+    .flow-line {
+      stroke-dasharray: 6 6;
+      animation: circuitFlow 1.8s linear infinite;
+    }
+
+    /* Scroll Reveal Transition Classes */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal-on-scroll.is-revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Stagger Delays for child cards */
+    .delay-100 { transition-delay: 100ms; }
+    .delay-200 { transition-delay: 200ms; }
+    .delay-300 { transition-delay: 300ms; }
+    .delay-400 { transition-delay: 400ms; }
+
+    /* Card Micro-interactions */
+    .card-hover-lift {
+      transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.3s cubic-bezier(0.2, 0, 0, 1), border-color 0.3s ease;
+    }
+    .card-hover-lift:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 28px -8px rgba(0, 100, 94, 0.12), 0 6px 12px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    /* Navigation Link Indicator Underline */
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 50%;
+      background-color: #00645e;
+      transition: all 0.25s ease-out;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+    .nav-link:hover::after,
+    .nav-link.active-nav::after {
+      width: 80%;
+    }
+  </style>
+</head>
+
+<body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-fixed selection:text-on-surface">
+
+  <!-- ========================================== -->
+  <!-- NAVIGATION BAR                             -->
+  <!-- ========================================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl border-b border-surface-container-high transition-all duration-300" id="main-nav">
+    <div class="h-16 max-w-[1280px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop flex items-center justify-between gap-space-md">
+      
+      <!-- Identity Logo -->
+      <a class="flex items-center gap-space-sm min-w-0 group" href="#hero">
+        <div class="w-9 h-9 rounded-lg bg-primary text-on-primary flex items-center justify-center font-label-technical font-semibold shadow-sm group-hover:scale-105 transition-transform">
+          NW
+        </div>
+        <div class="flex flex-col justify-center min-w-0">
+          <span class="font-headline-sm text-sm md:text-base text-on-surface tracking-tight truncate group-hover:text-primary transition-colors">
+            Nafeeul Walee
+          </span>
+          <span class="font-label-technical text-[10px] md:text-xs text-secondary tracking-wide uppercase truncate">
+            PhD Student · Georgia Southern Univ
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Items -->
+      <nav class="hidden lg:flex items-center gap-space-sm" id="desktop-nav-menu">
+        <a class="nav-link px-2.5 py-1 font-body-sm text-xs font-medium text-on-surface-variant hover:text-primary transition-colors" href="#hero">Overview</a>
+        <a class="nav-link px-2.5 py-1 font-body-sm text-xs font-medium text-on-surface-variant hover:text-primary transition-colors" href="#featured-research">Research</a>
+        <a class="nav-link px-2.5 py-1 font-body-sm text-xs font-medium text-on-surface-variant hover:text-primary transition-colors" href="#projects">Projects</a>
+        <a class="nav-link px-2.5 py-1 font-body-sm text-xs font-medium text-on-surface-variant hover:text-primary transition-colors" href="#publications">Publications</a>
+        <a class="nav-link px-2.5 py-1 font-body-sm text-xs font-medium text-on-surface-variant hover:text-primary transition-colors" href="#teaching">Teaching</a>
+        <a class="nav-link px-2.5 py-1 font-body-sm text-xs font-medium text-on-surface-variant hover:text-primary transition-colors" href="#experience">Experience</a>
+        <a class="nav-link px-2.5 py-1 font-body-sm text-xs font-medium text-on-surface-variant hover:text-primary transition-colors" href="#about">About</a>
+        <a class="nav-link px-2.5 py-1 font-body-sm text-xs font-medium text-on-surface-variant hover:text-primary transition-colors" href="#contact">Contact</a>
+      </nav>
+
+      <!-- Action & Mobile Toggle Button -->
+      <div class="flex items-center gap-space-sm shrink-0">
+        <a class="inline-flex items-center gap-space-xs px-3 py-1.5 bg-primary text-on-primary font-body-sm text-xs font-medium rounded-md hover:bg-primary-container hover:shadow transition-all" href="mailto:nafeewalee@gmail.com">
+          <span class="material-symbols-outlined text-[16px]">mail</span>
+          <span class="hidden sm:inline">Get in Touch</span>
+        </a>
+        <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu" class="lg:hidden p-1.5 rounded-md text-on-surface hover:bg-surface-container-high transition-colors">
+          <span class="material-symbols-outlined text-[24px]" id="mobile-menu-icon">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-nav" class="hidden lg:hidden bg-surface/98 backdrop-blur-2xl border-b border-surface-container-high px-margin py-space-md shadow-lg transition-all">
+      <div class="flex flex-col space-y-2">
+        <a class="mobile-nav-link py-2 px-3 rounded hover:bg-surface-container font-body-sm text-sm text-on-surface" href="#hero">Overview</a>
+        <a class="mobile-nav-link py-2 px-3 rounded hover:bg-surface-container font-body-sm text-sm text-on-surface" href="#featured-research">Featured Research</a>
+        <a class="mobile-nav-link py-2 px-3 rounded hover:bg-surface-container font-body-sm text-sm text-on-surface" href="#projects">Selected Projects</a>
+        <a class="mobile-nav-link py-2 px-3 rounded hover:bg-surface-container font-body-sm text-sm text-on-surface" href="#publications">Publications</a>
+        <a class="mobile-nav-link py-2 px-3 rounded hover:bg-surface-container font-body-sm text-sm text-on-surface" href="#teaching">Teaching</a>
+        <a class="mobile-nav-link py-2 px-3 rounded hover:bg-surface-container font-body-sm text-sm text-on-surface" href="#experience">Experience</a>
+        <a class="mobile-nav-link py-2 px-3 rounded hover:bg-surface-container font-body-sm text-sm text-on-surface" href="#about">About &amp; Honors</a>
+        <a class="mobile-nav-link py-2 px-3 rounded hover:bg-surface-container font-body-sm text-sm text-on-surface" href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- MAIN CONTENT CONTAINER                     -->
+  <!-- ========================================== -->
+  <main class="w-full pt-16 bg-surface min-h-screen overflow-hidden">
+
+    <!-- ========================================== -->
+    <!-- 1. HERO SECTION                            -->
+    <!-- ========================================== -->
+    <section class="w-full py-space-2xl md:py-space-3xl px-margin md:px-margin-tablet lg:px-margin-desktop max-w-[1280px] mx-auto" id="hero">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center">
+        
+        <!-- Left Column -->
+        <div class="lg:col-span-7 flex flex-col items-start space-y-space-md reveal-on-scroll">
+          
+          <!-- Identity Label & Badge -->
+          <div class="flex flex-col space-y-space-xs">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container/10 border border-primary/20">
+              <span class="w-2.5 h-2.5 rounded-full bg-primary inline-block animate-ping"></span>
+              <span class="font-label-technical text-xs tracking-widest text-primary uppercase font-bold">
+                Nafeeul Alam Walee
+              </span>
+            </div>
+            <span class="font-label-code text-xs md:text-sm text-secondary tracking-tight">
+              PhD Student in Applied Computing · Georgia Southern University
+            </span>
+          </div>
+
+          <!-- Headline -->
+          <h1 class="font-headline-lg text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] text-on-surface leading-[1.15] tracking-tight">
+            Researching <span class="font-display italic font-normal text-primary">intelligent systems</span>. Building practical solutions.
+          </h1>
+
+          <!-- Supporting Copy -->
+          <p class="font-body-lg text-base md:text-lg text-on-surface-variant max-w-xl font-light leading-relaxed">
+            I work across generative AI, computer vision, and cybersecurity, connecting research with real-world software. Alongside doctoral studies, I teach undergraduate computing and engineer production mobile and cloud systems.
+          </p>
+
+          <!-- Compact Identity Strip -->
+          <div class="py-space-xs px-space-sm bg-surface-container-high rounded text-on-surface flex items-center shadow-sm">
+            <span class="font-label-technical text-xs uppercase tracking-wider text-secondary">
+              AI Researcher <span class="text-primary mx-1">·</span> Educator <span class="text-primary mx-1">·</span> Software Engineer
+            </span>
+          </div>
+
+          <!-- Call to Actions -->
+          <div class="flex flex-wrap items-center gap-space-sm pt-space-xs">
+            <a class="group px-space-lg py-space-sm bg-primary text-on-primary font-body-sm font-medium rounded-lg hover:bg-primary-container shadow hover:shadow-lg transition-all flex items-center gap-space-xs" href="#featured-research">
+              <span>Explore my work</span>
+              <span class="material-symbols-outlined text-[18px] group-hover:translate-y-0.5 transition-transform">arrow_downward</span>
+            </a>
+            <a class="px-space-lg py-space-sm bg-surface-container text-on-surface font-body-sm font-medium rounded-lg hover:bg-surface-container-highest transition-all flex items-center gap-space-xs" href="#contact">
+              <span>Get in touch</span>
+              <span class="material-symbols-outlined text-[18px]">mail</span>
+            </a>
+          </div>
+
+          <!-- Scholarly External References -->
+          <div class="flex items-center gap-space-md pt-space-sm text-secondary font-label-code text-xs">
+            <a class="hover:text-primary transition-colors flex items-center gap-1 hover:underline" href="https://www.linkedin.com/in/nafeewalee/" rel="noopener noreferrer" target="_blank">
+              <span class="text-primary font-semibold">[01]</span> LinkedIn
+            </a>
+            <a class="hover:text-primary transition-colors flex items-center gap-1 hover:underline" href="https://github.com/NafeeWalee" rel="noopener noreferrer" target="_blank">
+              <span class="text-primary font-semibold">[02]</span> GitHub
+            </a>
+            <a class="hover:text-primary transition-colors flex items-center gap-1 hover:underline" href="https://scholar.google.com/citations?user=_ReNEy4AAAAJ" rel="noopener noreferrer" target="_blank">
+              <span class="text-primary font-semibold">[03]</span> Scholar
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Animated Neural SVG Circuit Diagram -->
+        <div class="lg:col-span-5 relative mt-space-lg lg:mt-0 reveal-on-scroll delay-200">
+          <div class="w-full bg-surface-container-low border border-surface-container-high rounded-2xl p-space-md shadow-lg relative overflow-hidden card-hover-lift">
+            
+            <!-- Monospace Technical Legend Header -->
+            <div class="flex items-center justify-between pb-space-sm mb-space-sm bg-surface-container-high px-space-sm py-space-xs rounded">
+              <span class="font-label-technical text-xs text-primary font-semibold tracking-wider flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                FIG 01.1 // SYSTEM_SYNTHESIS
+              </span>
+              <span class="font-label-code text-[11px] text-secondary">ACTIVE_CYCLE</span>
+            </div>
+
+            <!-- Technical Schematic Diagram with animated pulse/flow -->
+            <div class="w-full h-80 flex items-center justify-center relative">
+              <svg class="w-full h-full text-on-surface" fill="none" viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <pattern height="20" id="grid-subtle" patternUnits="userSpaceOnUse" width="20">
+                    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" stroke-opacity="0.05" stroke-width="1"></path>
+                  </pattern>
+                </defs>
+                <rect fill="url(#grid-subtle)" height="100%" width="100%"></rect>
+
+                <!-- Circuit Trace Connections with Animated Flow Lines -->
+                <path class="flow-line" d="M 60 70 L 160 70 L 160 160" stroke="#00645e" stroke-width="1.75"></path>
+                <path class="flow-line" d="M 60 250 L 160 250 L 160 160" stroke="#00645e" stroke-width="1.75"></path>
+                <path class="flow-line" d="M 260 160 L 350 160" stroke="#00645e" stroke-width="2"></path>
+                <path class="flow-line" d="M 350 160 L 350 80 L 380 80" stroke="#00645e" stroke-width="1.75"></path>
+                <path class="flow-line" d="M 350 160 L 350 240 L 380 240" stroke="#00645e" stroke-width="1.75"></path>
+
+                <!-- Node 1: Visual & Edge Sensor Array -->
+                <rect class="shadow-sm" fill="#ffffff" stroke="#e2e3e0" height="50" rx="6" width="115" x="18" y="45"></rect>
+                <text fill="#00645e" font-family="JetBrains Mono" font-size="9" font-weight="700" x="28" y="66">INPUT STREAM</text>
+                <text fill="#191c1b" font-family="Manrope" font-size="11" font-weight="600" x="28" y="82">Visual/Edge RGB</text>
+                <circle cx="18" cy="70" fill="#00645e" r="3.5"></circle>
+
+                <!-- Node 2: Sensor Telemetry -->
+                <rect class="shadow-sm" fill="#ffffff" stroke="#e2e3e0" height="50" rx="6" width="115" x="18" y="225"></rect>
+                <text fill="#00645e" font-family="JetBrains Mono" font-size="9" font-weight="700" x="28" y="246">STATE VECTORS</text>
+                <text fill="#191c1b" font-family="Manrope" font-size="11" font-weight="600" x="28" y="262">Circuit / Node Data</text>
+                <circle cx="18" cy="250" fill="#00645e" r="3.5"></circle>
+
+                <!-- Central Core: Neural Interpretation Pipeline -->
+                <rect class="shadow-md animate-glow" fill="#00645e" height="92" rx="8" width="124" x="148" y="114"></rect>
+                <text fill="#d9fffa" font-family="JetBrains Mono" font-size="9" font-weight="600" letter-spacing="1" x="162" y="140">ENGINE CORE</text>
+                <text fill="#ffffff" font-family="Playfair Display" font-size="15" font-style="italic" x="162" y="162">Generative AI &amp;</text>
+                <text fill="#d9fffa" font-family="Manrope" font-size="12" font-weight="600" x="162" y="180">Vision Inference</text>
+
+                <!-- Node 3: Synthesis Out -->
+                <rect class="shadow-sm" fill="#ffffff" stroke="#e2e3e0" height="46" rx="6" width="110" x="295" y="58"></rect>
+                <text fill="#00645e" font-family="JetBrains Mono" font-size="8.5" font-weight="700" x="306" y="76">SYNTHESIS_OUT</text>
+                <text fill="#191c1b" font-family="Manrope" font-size="11" font-weight="600" x="306" y="92">Arduino / C++</text>
+
+                <!-- Node 4: Action / Deployed Edge -->
+                <rect class="shadow-sm" fill="#ffffff" stroke="#e2e3e0" height="46" rx="6" width="110" x="295" y="218"></rect>
+                <text fill="#00645e" font-family="JetBrains Mono" font-size="8.5" font-weight="700" x="306" y="236">DEPLOYED_EDGE</text>
+                <text fill="#191c1b" font-family="Manrope" font-size="11" font-weight="600" x="306" y="252">Cloud &amp; Hardware</text>
+
+                <!-- Subtle pulsing sensor points -->
+                <circle class="animate-ping" cx="160" cy="160" fill="#95f3ea" r="4"></circle>
+                <circle cx="160" cy="160" fill="#087f78" r="4"></circle>
+                <circle cx="260" cy="160" fill="#78d6ce" r="4"></circle>
+              </svg>
+            </div>
+
+            <div class="mt-space-sm pt-space-xs text-center border-t border-surface-container">
+              <span class="font-label-technical text-[11px] text-secondary tracking-wider uppercase">
+                Translating visual perception into programmatic edge actions
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 2. FEATURED RESEARCH (DEEP NAVY)           -->
+    <!-- ========================================== -->
+    <section class="w-full bg-[#111F2B] text-surface py-space-3xl px-margin md:px-margin-tablet lg:px-margin-desktop relative" id="featured-research">
+      <div class="max-w-[1280px] mx-auto flex flex-col space-y-space-xl">
+        
+        <!-- Eyebrow & Meta Indicator -->
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-xs pb-space-sm bg-[#1F3345]/70 px-space-md py-space-xs rounded-lg border border-[#2b445c] reveal-on-scroll">
+          <div class="flex items-center gap-space-xs">
+            <span class="font-label-code text-xs bg-primary-container text-on-primary-container px-2 py-0.5 rounded font-medium">AIRC 2025</span>
+            <span class="font-label-technical text-xs text-primary-fixed tracking-wider uppercase font-semibold">IEEE Sponsored Research</span>
+          </div>
+          <span class="font-label-code text-xs text-secondary-container">DOI: 10.1109/AIRC66023.2025.11077546</span>
+        </div>
+
+        <!-- Main Headline + Authors -->
+        <div class="space-y-space-sm max-w-4xl reveal-on-scroll delay-100">
+          <h2 class="font-headline-lg text-2xl sm:text-3xl md:text-4xl text-surface-container-lowest font-display leading-tight">
+            Empowering Circuit Prototyping with Generative AI: <span class="italic text-primary-fixed font-normal">A Framework for Vision-Based Real-Time Code Generation and Adaptation</span>
+          </h2>
+          <p class="font-body-md text-sm md:text-base text-surface-variant font-light">
+            <span class="font-semibold text-white">Nafeeul Alam Walee</span>, Atef Shalan, Hayden Wimmer, and Christopher Kadlec
+          </p>
+          <p class="font-body-lg text-sm md:text-base text-secondary-container pt-space-xs leading-relaxed">
+            Exploring how visual input and generative AI can support circuit prototyping by producing and adapting Arduino code directly from camera feeds.
+          </p>
+        </div>
+
+        <!-- Structured Three-Part Research Dissection -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-desktop">
+          <!-- Problem -->
+          <div class="bg-[#172736] p-space-lg rounded-xl border border-[#243a4e] flex flex-col justify-between card-hover-lift reveal-on-scroll delay-100">
+            <div class="space-y-space-xs">
+              <span class="font-label-technical text-xs text-primary-fixed tracking-widest uppercase font-semibold">[01] The Problem</span>
+              <h3 class="font-headline-sm text-lg text-surface font-semibold pt-1">Prototyping Bottlenecks</h3>
+              <p class="font-body-sm text-sm text-surface-variant leading-relaxed">
+                Moving between a physical circuit and the code that controls it requires repeated interpretation, manual pin mapping, and continuous algorithmic revision.
+              </p>
+            </div>
+          </div>
+
+          <!-- Approach -->
+          <div class="bg-[#172736] p-space-lg rounded-xl border border-[#243a4e] flex flex-col justify-between card-hover-lift reveal-on-scroll delay-200">
+            <div class="space-y-space-xs">
+              <span class="font-label-technical text-xs text-primary-fixed tracking-widest uppercase font-semibold">[02] The Approach</span>
+              <h3 class="font-headline-sm text-lg text-surface font-semibold pt-1">Multimodal Pipeline</h3>
+              <p class="font-body-sm text-sm text-surface-variant leading-relaxed">
+                An AI pipeline built with Python and OpenAI multimodal models that ingests live visual frames of breadboard configurations and generates deployable Arduino C++ in real time.
+              </p>
+            </div>
+          </div>
+
+          <!-- Contribution -->
+          <div class="bg-[#172736] p-space-lg rounded-xl border border-[#243a4e] flex flex-col justify-between card-hover-lift reveal-on-scroll delay-300">
+            <div class="space-y-space-xs">
+              <span class="font-label-technical text-xs text-primary-fixed tracking-widest uppercase font-semibold">[03] My Contribution</span>
+              <h3 class="font-headline-sm text-lg text-surface font-semibold pt-1">Core Architecture</h3>
+              <p class="font-body-sm text-sm text-surface-variant leading-relaxed">
+                Developed the end-to-end AI pipeline and applied systematic prompt engineering and computer vision filters to reliably bind breadboard states to deterministic micro-controller instructions.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Conceptual Workflow Interactive Visual -->
+        <div class="bg-[#172736] rounded-xl p-space-lg border border-[#243a4e] shadow-lg space-y-space-md reveal-on-scroll">
+          <div class="flex items-center justify-between pb-space-xs">
+            <div class="flex items-center gap-space-xs">
+              <span class="material-symbols-outlined text-primary-fixed text-[20px]">account_tree</span>
+              <span class="font-label-technical text-xs text-surface tracking-wider uppercase font-semibold">Conceptual Workflow Pipeline</span>
+            </div>
+            <span class="font-label-code text-xs text-secondary-container">N=120 Validation Trials</span>
+          </div>
+
+          <!-- Pipeline Step Graphic -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-sm pt-space-xs">
+            <div class="p-space-sm bg-[#1F3345] rounded-lg border border-[#2A435B] flex flex-col space-y-space-xs card-hover-lift">
+              <span class="font-label-code text-xs text-primary-fixed font-semibold">STAGE_01</span>
+              <span class="font-headline-sm text-sm font-semibold text-surface">Visual Input</span>
+              <p class="font-body-sm text-xs text-surface-variant">Live optical camera capture of breadboard circuits and components.</p>
+            </div>
+            <div class="p-space-sm bg-[#1F3345] rounded-lg border border-[#2A435B] flex flex-col space-y-space-xs card-hover-lift">
+              <span class="font-label-code text-xs text-primary-fixed font-semibold">STAGE_02</span>
+              <span class="font-headline-sm text-sm font-semibold text-surface">AI Interpretation</span>
+              <p class="font-body-sm text-xs text-surface-variant">Multimodal semantic parsing of node junctions and component values.</p>
+            </div>
+            <div class="p-space-sm bg-[#1F3345] rounded-lg border border-[#2A435B] flex flex-col space-y-space-xs card-hover-lift">
+              <span class="font-label-code text-xs text-primary-fixed font-semibold">STAGE_03</span>
+              <span class="font-headline-sm text-sm font-semibold text-surface">Code Generation</span>
+              <p class="font-body-sm text-xs text-surface-variant">Synthesizing robust Arduino C++ scripts with dynamic pin assignments.</p>
+            </div>
+            <div class="p-space-sm bg-[#1F3345] rounded-lg border border-[#2A435B] flex flex-col space-y-space-xs card-hover-lift">
+              <span class="font-label-code text-xs text-primary-fixed font-semibold">STAGE_04</span>
+              <span class="font-headline-sm text-sm font-semibold text-surface">Prototype Testing</span>
+              <p class="font-body-sm text-xs text-surface-variant">Real-world verification and closed-loop feedback for adaptive code repair.</p>
+            </div>
+          </div>
+
+          <!-- Architecture Detail Collapsible -->
+          <div class="hidden pt-space-md mt-space-sm bg-[#111F2B] p-space-md rounded-lg space-y-space-xs border border-[#1f374d] transition-all" id="architecture-detail">
+            <span class="font-label-technical text-xs text-primary-fixed uppercase tracking-wider font-semibold">Architecture Blueprint · Technical Deep Dive</span>
+            <p class="font-body-sm text-xs md:text-sm text-surface-variant leading-relaxed">
+              The system employs a client-server architecture. An edge camera delivers a 1080p frame buffer to an image preprocessing daemon (OpenCV) that normalizes lighting conditions and extracts region-of-interest contours around standard breadboard tie-points. The filtered frame is transmitted via secure JSON payloads to OpenAI GPT-4o multimodal vision endpoints. Custom structured prompts enforce JSON outputs containing abstract syntax trees (AST) for Arduino code, reducing hallucinations to under 3.2% across iterative physical tests.
+            </p>
+          </div>
+        </div>
+
+        <!-- Action Row -->
+        <div class="flex flex-wrap items-center gap-space-sm pt-space-xs reveal-on-scroll">
+          <a class="px-space-lg py-space-sm bg-primary-fixed text-on-surface font-body-sm font-semibold rounded-lg hover:bg-white transition-all inline-flex items-center gap-space-xs shadow" href="https://ieeexplore.ieee.org/abstract/document/11077546" rel="noopener noreferrer" target="_blank">
+            <span>Read IEEE Paper</span>
+            <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+          </a>
+          <button class="px-space-lg py-space-sm bg-[#1F3345] text-surface font-body-sm font-medium rounded-lg hover:bg-[#2A435B] transition-all inline-flex items-center gap-space-xs" id="toggle-architecture-btn">
+            <span id="toggle-arch-text">Explore the approach</span>
+            <span class="material-symbols-outlined text-[16px]" id="toggle-arch-icon">expand_more</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 3. SELECTED PROJECTS SECTION               -->
+    <!-- ========================================== -->
+    <section class="w-full py-space-3xl px-margin md:px-margin-tablet lg:px-margin-desktop max-w-[1280px] mx-auto" id="projects">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-space-2xl gap-space-md reveal-on-scroll">
+        <div class="max-w-2xl space-y-space-xs">
+          <span class="font-label-technical text-xs tracking-widest text-primary uppercase font-bold">Applied Systems Portfolio</span>
+          <h2 class="font-headline-lg text-3xl md:text-4xl text-on-surface">
+            From research questions to working systems
+          </h2>
+          <p class="font-body-md text-sm md:text-base text-on-surface-variant font-light">
+            From AI research prototypes to collaborative mobile applications, connecting technical research with reliable software engineering.
+          </p>
+        </div>
+
+        <!-- Filter Button Tabs -->
+        <div class="flex items-center gap-1 bg-surface-container-high p-1 rounded-lg self-start md:self-auto border border-surface-container-highest">
+          <button class="filter-tab px-space-md py-space-xs rounded-md font-label-technical text-xs uppercase tracking-wider transition-all bg-primary text-on-primary shadow-sm" data-filter="all">
+            All
+          </button>
+          <button class="filter-tab px-space-md py-space-xs rounded-md font-label-technical text-xs uppercase tracking-wider text-secondary hover:text-on-surface transition-all" data-filter="research">
+            AI &amp; Research
+          </button>
+          <button class="filter-tab px-space-md py-space-xs rounded-md font-label-technical text-xs uppercase tracking-wider text-secondary hover:text-on-surface transition-all" data-filter="software">
+            Mobile &amp; Software
+          </button>
+        </div>
+      </div>
+
+      <!-- Project Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-desktop" id="projects-grid">
+        
+        <!-- Project 1: Wildfire Detection -->
+        <article class="project-item bg-surface-container-lowest p-space-lg rounded-2xl border border-surface-container-high shadow-sm card-hover-lift flex flex-col justify-between space-y-space-md reveal-on-scroll" data-category="research">
+          <div class="space-y-space-sm">
+            <div class="flex items-center justify-between">
+              <span class="font-label-code text-xs text-primary font-bold">CV // DEEP LEARNING</span>
+              <span class="font-label-technical text-xs text-secondary uppercase">2024</span>
+            </div>
+            <div>
+              <h3 class="font-headline-md text-xl text-on-surface font-semibold">Early Wildfire Detection Using Deep Learning</h3>
+              <span class="font-label-code text-xs text-secondary block mt-1">Forest Sensor Image Preprocessing &amp; Classification</span>
+            </div>
+            <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+              Improving the reliability of forest surveillance images for deep-learning-based early wildfire detection under extreme low-visibility conditions.
+            </p>
+            <div class="p-space-sm bg-surface-container-low rounded-lg text-on-surface">
+              <span class="font-label-technical text-xs text-primary font-bold uppercase block mb-1">Key Contribution</span>
+              <p class="font-body-sm text-xs text-on-surface-variant">
+                Applied OpenCV preprocessing and visibility filtering algorithms to improve optical quality before neural network classification.
+              </p>
+            </div>
+          </div>
+          <div class="space-y-space-sm pt-space-xs">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">Computer Vision</span>
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">Deep Learning</span>
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">OpenCV</span>
+            </div>
+            <div class="flex items-center gap-space-md font-label-code text-xs text-primary pt-1 font-semibold">
+              <a class="hover:underline flex items-center gap-1" href="https://github.com/NafeeWalee/WildFireDetection_Visibility" rel="noopener noreferrer" target="_blank">[01] Code Repo</a>
+              <a class="hover:underline flex items-center gap-1" href="https://ieeexplore.ieee.org/abstract/document/10743078" rel="noopener noreferrer" target="_blank">[02] Paper</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: Monocle -->
+        <article class="project-item bg-surface-container-lowest p-space-lg rounded-2xl border border-surface-container-high shadow-sm card-hover-lift flex flex-col justify-between space-y-space-md reveal-on-scroll delay-100" data-category="software">
+          <div class="space-y-space-sm">
+            <div class="flex items-center justify-between">
+              <span class="font-label-code text-xs text-primary font-bold">MOBILE // COLLABORATIVE</span>
+              <span class="font-label-technical text-xs text-secondary uppercase">Monocle Team</span>
+            </div>
+            <div>
+              <h3 class="font-headline-md text-xl text-on-surface font-semibold">Monocle</h3>
+              <span class="font-label-code text-xs text-secondary block mt-1">Collaborative E-Reader Application</span>
+            </div>
+            <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+              A cross-platform reading application developed through collaborative mobile engineering, providing smooth typography and synchronized reading sessions.
+            </p>
+            <div class="p-space-sm bg-surface-container-low rounded-lg text-on-surface">
+              <span class="font-label-technical text-xs text-primary font-bold uppercase block mb-1">Key Contribution</span>
+              <p class="font-body-sm text-xs text-on-surface-variant">
+                Contributed to mobile development, client-side performance tuning, and feature refinement while collaborating closely with designers and the dev team.
+              </p>
+            </div>
+          </div>
+          <div class="space-y-space-sm pt-space-xs">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">Flutter</span>
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">Dart</span>
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">Cross-Platform UI</span>
+            </div>
+            <div class="text-secondary font-label-code text-xs">
+              <span>Collaborative Engineering Initiative</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: Travel Hackerz -->
+        <article class="project-item bg-surface-container-lowest p-space-lg rounded-2xl border border-surface-container-high shadow-sm card-hover-lift flex flex-col justify-between space-y-space-md reveal-on-scroll" data-category="software">
+          <div class="space-y-space-sm">
+            <div class="flex items-center justify-between">
+              <span class="font-label-code text-xs text-primary font-bold">LOCATION // REAL-TIME</span>
+              <span class="font-label-technical text-xs text-secondary uppercase">Long Software LLC</span>
+            </div>
+            <div>
+              <h3 class="font-headline-md text-xl text-on-surface font-semibold">Travel Hackerz</h3>
+              <span class="font-label-code text-xs text-secondary block mt-1">Travel Companion &amp; Real-Time Coordination App</span>
+            </div>
+            <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+              A mobile application supporting travel sharing, itinerary sync, and real-time group coordination across active destinations.
+            </p>
+            <div class="p-space-sm bg-surface-container-low rounded-lg text-on-surface">
+              <span class="font-label-technical text-xs text-primary font-bold uppercase block mb-1">Key Contribution</span>
+              <p class="font-body-sm text-xs text-on-surface-variant">
+                Developed Flutter functionality integrating Google Maps SDK and Cloud Firestore for low-latency location coordination.
+              </p>
+            </div>
+          </div>
+          <div class="space-y-space-sm pt-space-xs">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">Flutter</span>
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">Google Maps</span>
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">Cloud Firestore</span>
+            </div>
+            <div class="text-secondary font-label-code text-xs">
+              <span>Production Mobile Deployment</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: Social Media Threat Detection -->
+        <article class="project-item bg-surface-container-lowest p-space-lg rounded-2xl border border-surface-container-high shadow-sm card-hover-lift flex flex-col justify-between space-y-space-md reveal-on-scroll delay-100" data-category="research">
+          <div class="space-y-space-sm">
+            <div class="flex items-center justify-between">
+              <span class="font-label-code text-xs text-primary font-bold">CYBERSECURITY // ML</span>
+              <span class="font-label-technical text-xs text-secondary uppercase">Springer CCIS</span>
+            </div>
+            <div>
+              <h3 class="font-headline-md text-xl text-on-surface font-semibold">Social Media Threat Detection</h3>
+              <span class="font-label-code text-xs text-secondary block mt-1">Account Classification &amp; Malicious URL Identification</span>
+            </div>
+            <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+              Applying deep learning architectures to automated fake-account discovery and rapid malicious URL detection across social networks.
+            </p>
+            <div class="p-space-sm bg-surface-container-low rounded-lg text-on-surface">
+              <span class="font-label-technical text-xs text-primary font-bold uppercase block mb-1">Key Contribution</span>
+              <p class="font-body-sm text-xs text-on-surface-variant">
+                Built a CNN-based account-classification pipeline integrated with external threat security analysis APIs.
+              </p>
+            </div>
+          </div>
+          <div class="space-y-space-sm pt-space-xs">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">Cybersecurity</span>
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">Deep Learning</span>
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">Social Networks</span>
+            </div>
+            <div class="flex items-center gap-space-md font-label-code text-xs text-primary pt-1 font-semibold">
+              <a class="hover:underline flex items-center gap-1" href="https://link.springer.com/chapter/10.1007/978-3-031-86637-1_6" rel="noopener noreferrer" target="_blank">[01] Publication Chapter</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 5: DiZLog -->
+        <article class="project-item bg-surface-container-lowest p-space-lg rounded-2xl border border-surface-container-high shadow-sm card-hover-lift flex flex-col justify-between space-y-space-md reveal-on-scroll" data-category="software">
+          <div class="space-y-space-sm">
+            <div class="flex items-center justify-between">
+              <span class="font-label-code text-xs text-primary font-bold">COMMERCE // ARCHITECTURE</span>
+              <span class="font-label-technical text-xs text-secondary uppercase">Upwork Collaborative</span>
+            </div>
+            <div>
+              <h3 class="font-headline-md text-xl text-on-surface font-semibold">DiZLog</h3>
+              <span class="font-label-code text-xs text-secondary block mt-1">POS, Accounting &amp; Inventory App</span>
+            </div>
+            <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+              A comprehensive mobile business suite spanning POS retail registers, dual-entry accounting routines, and warehouse inventory tracking.
+            </p>
+            <div class="p-space-sm bg-surface-container-low rounded-lg text-on-surface">
+              <span class="font-label-technical text-xs text-primary font-bold uppercase block mb-1">Key Contribution</span>
+              <p class="font-body-sm text-xs text-on-surface-variant">
+                Collaborative freelance project through Upwork (June–August 2022). Implemented responsive ledger interfaces and offline SQLite synchronization.
+              </p>
+            </div>
+          </div>
+          <div class="space-y-space-sm pt-space-xs">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">Freelance</span>
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">Mobile Commerce</span>
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">Offline-First</span>
+            </div>
+            <div class="text-secondary font-label-code text-xs">
+              <span>Client Implementation Record</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 6: Flutter Responsive UI -->
+        <article class="project-item bg-surface-container-lowest p-space-lg rounded-2xl border border-surface-container-high shadow-sm card-hover-lift flex flex-col justify-between space-y-space-md reveal-on-scroll delay-100" data-category="software">
+          <div class="space-y-space-sm">
+            <div class="flex items-center justify-between">
+              <span class="font-label-code text-xs text-primary font-bold">ENGINEERING // UI ARCHITECTURE</span>
+              <span class="font-label-technical text-xs text-secondary uppercase">Personal Systems</span>
+            </div>
+            <div>
+              <h3 class="font-headline-md text-xl text-on-surface font-semibold">Flutter Responsive UI &amp; Portfolio Application</h3>
+              <span class="font-label-code text-xs text-secondary block mt-1">Design System &amp; Responsive Architecture</span>
+            </div>
+            <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+              A Flutter system exploring multi-tier breakpoint scaling, responsive layout engines, and zero-jank transitions across mobile, tablet, and web viewports.
+            </p>
+            <div class="p-space-sm bg-surface-container-low rounded-lg text-on-surface">
+              <span class="font-label-technical text-xs text-primary font-bold uppercase block mb-1">Key Contribution</span>
+              <p class="font-body-sm text-xs text-on-surface-variant">
+                Engineered decoupled state architectures using GetX and clean architectural boundaries for modular screen rendering.
+              </p>
+            </div>
+          </div>
+          <div class="space-y-space-sm pt-space-xs">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">Flutter</span>
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">Dart</span>
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">GetX</span>
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">Firebase</span>
+            </div>
+            <div class="text-secondary font-label-code text-xs">
+              <span>Modular Prototype</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 7: GAN-Based Image Enhancement (Extra) -->
+        <article class="project-item hidden extra-project bg-surface-container-lowest p-space-lg rounded-2xl border border-surface-container-high shadow-sm card-hover-lift flex flex-col justify-between space-y-space-md" data-category="research">
+          <div class="space-y-space-sm">
+            <div class="flex items-center justify-between">
+              <span class="font-label-code text-xs text-primary font-bold">CV // GANs</span>
+              <span class="font-label-technical text-xs text-secondary uppercase">IEEE JSAC</span>
+            </div>
+            <div>
+              <h3 class="font-headline-md text-xl text-on-surface font-semibold">GAN-Based Image Enhancement</h3>
+              <span class="font-label-code text-xs text-secondary block mt-1">Drone &amp; Aerial Traffic Monitoring</span>
+            </div>
+            <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+              Investigating image super-resolution and enhancement pipelines for drone imagery to empower automated intelligent traffic analysis.
+            </p>
+            <div class="p-space-sm bg-surface-container-low rounded-lg text-on-surface">
+              <span class="font-label-technical text-xs text-primary font-bold uppercase block mb-1">Key Contribution</span>
+              <p class="font-body-sm text-xs text-on-surface-variant">
+                Applied generative adversarial methods to overcome aerial optical degradation and motion artifacts in UAV feeds.
+              </p>
+            </div>
+          </div>
+          <div class="space-y-space-sm pt-space-xs">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">Computer Vision</span>
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">GANs</span>
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">UAV Imagery</span>
+            </div>
+            <a class="font-label-code text-xs text-primary hover:underline font-semibold block pt-1" href="https://ieeexplore.ieee.org/abstract/document/11217385" rel="noopener noreferrer" target="_blank">[01] Related Publication</a>
+          </div>
+        </article>
+
+        <!-- Project 8: AI Learning Assistant (Extra) -->
+        <article class="project-item hidden extra-project bg-surface-container-lowest p-space-lg rounded-2xl border border-surface-container-high shadow-sm card-hover-lift flex flex-col justify-between space-y-space-md" data-category="research">
+          <div class="space-y-space-sm">
+            <div class="flex items-center justify-between">
+              <span class="font-label-code text-xs text-primary font-bold">GEN AI // PEDAGOGY</span>
+              <span class="font-label-technical text-xs text-secondary uppercase">2024</span>
+            </div>
+            <div>
+              <h3 class="font-headline-md text-xl text-on-surface font-semibold">AI Learning Assistant</h3>
+              <span class="font-label-code text-xs text-secondary block mt-1">Instruction-Tuned Interactive Support</span>
+            </div>
+            <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+              An assistive system deploying GPT-4o with structured, scaffolding-based instruction design to guide computing students through conceptual hurdles.
+            </p>
+            <div class="p-space-sm bg-surface-container-low rounded-lg text-on-surface">
+              <span class="font-label-technical text-xs text-primary font-bold uppercase block mb-1">Key Contribution</span>
+              <p class="font-body-sm text-xs text-on-surface-variant">
+                Formulated domain-specific prompt engineering frameworks preventing answer regurgitation while guiding step-by-step problem comprehension.
+              </p>
+            </div>
+          </div>
+          <div class="space-y-space-sm pt-space-xs">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">Generative AI</span>
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">Prompt Engineering</span>
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">Educational AI</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 9: OpenAI API Performance Analysis (Extra) -->
+        <article class="project-item hidden extra-project bg-surface-container-lowest p-space-lg rounded-2xl border border-surface-container-high shadow-sm card-hover-lift flex flex-col justify-between space-y-space-md" data-category="research">
+          <div class="space-y-space-sm">
+            <div class="flex items-center justify-between">
+              <span class="font-label-code text-xs text-primary font-bold">BENCHMARKING // SYSTEMS</span>
+              <span class="font-label-technical text-xs text-secondary uppercase">IEEE AIRC</span>
+            </div>
+            <div>
+              <h3 class="font-headline-md text-xl text-on-surface font-semibold">OpenAI API Performance Analysis</h3>
+              <span class="font-label-code text-xs text-secondary block mt-1">Latency, Token Throughput &amp; Cost Profiling</span>
+            </div>
+            <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+              Empirical investigation of response token latency, inference processing variance, and cost efficiency across production LLM endpoints.
+            </p>
+            <div class="p-space-sm bg-surface-container-low rounded-lg text-on-surface">
+              <span class="font-label-technical text-xs text-primary font-bold uppercase block mb-1">Key Contribution</span>
+              <p class="font-body-sm text-xs text-on-surface-variant">
+                Designed automated benchmarking test harnesses measuring token-per-second degradation across concurrent payload conditions.
+              </p>
+            </div>
+          </div>
+          <div class="space-y-space-sm pt-space-xs">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">Benchmarking</span>
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">LLM APIs</span>
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">Token Efficiency</span>
+            </div>
+            <a class="font-label-code text-xs text-primary hover:underline font-semibold block pt-1" href="https://ieeexplore.ieee.org/abstract/document/11077529" rel="noopener noreferrer" target="_blank">[01] Research Paper</a>
+          </div>
+        </article>
+
+        <!-- Project 10: Close Connect (Extra) -->
+        <article class="project-item hidden extra-project bg-surface-container-lowest p-space-lg rounded-2xl border border-surface-container-high shadow-sm card-hover-lift flex flex-col justify-between space-y-space-md" data-category="software">
+          <div class="space-y-space-sm">
+            <div class="flex items-center justify-between">
+              <span class="font-label-code text-xs text-primary font-bold">RTC // WEBRTC</span>
+              <span class="font-label-technical text-xs text-secondary uppercase">Long Software LLC</span>
+            </div>
+            <div>
+              <h3 class="font-headline-md text-xl text-on-surface font-semibold">Close Connect</h3>
+              <span class="font-label-code text-xs text-secondary block mt-1">Real-Time Video-Based Matching App</span>
+            </div>
+            <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+              A real-time social application centered on low-latency video matchmaking and ephemeral peer-to-peer connection protocols.
+            </p>
+            <div class="p-space-sm bg-surface-container-low rounded-lg text-on-surface">
+              <span class="font-label-technical text-xs text-primary font-bold uppercase block mb-1">Key Context</span>
+              <p class="font-body-sm text-xs text-on-surface-variant">
+                Collaborative mobile engineering initiative associated with Long Software LLC, focusing on camera stream lifecycle management.
+              </p>
+            </div>
+          </div>
+          <div class="space-y-space-sm pt-space-xs">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">Flutter</span>
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">WebRTC</span>
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">Real-Time Sync</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 11: The Gift Fitness (Extra) -->
+        <article class="project-item hidden extra-project bg-surface-container-lowest p-space-lg rounded-2xl border border-surface-container-high shadow-sm card-hover-lift flex flex-col justify-between space-y-space-md" data-category="software">
+          <div class="space-y-space-sm">
+            <div class="flex items-center justify-between">
+              <span class="font-label-code text-xs text-primary font-bold">HEALTH // TRACKING</span>
+              <span class="font-label-technical text-xs text-secondary uppercase">Long Software LLC</span>
+            </div>
+            <div>
+              <h3 class="font-headline-md text-xl text-on-surface font-semibold">The Gift Fitness</h3>
+              <span class="font-label-code text-xs text-secondary block mt-1">Personalized Fitness &amp; Accountability App</span>
+            </div>
+            <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+              An accountability and fitness routine tracker providing structured goal check-ins and personal progression analytics.
+            </p>
+            <div class="p-space-sm bg-surface-container-low rounded-lg text-on-surface">
+              <span class="font-label-technical text-xs text-primary font-bold uppercase block mb-1">Key Context</span>
+              <p class="font-body-sm text-xs text-on-surface-variant">
+                Collaborative project associated with Long Software LLC, creating dynamic workout metrics visualization widgets.
+              </p>
+            </div>
+          </div>
+          <div class="space-y-space-sm pt-space-xs">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">Flutter</span>
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">Firebase</span>
+              <span class="px-2.5 py-0.5 bg-surface-container text-on-surface font-label-code text-xs rounded">Analytics</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Toggle Extra Projects Button -->
+      <div class="mt-space-xl flex justify-center">
+        <button class="px-space-lg py-space-sm bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-body-sm font-medium rounded-lg border border-surface-container-highest transition-all inline-flex items-center gap-space-xs shadow-sm hover:shadow" id="view-more-projects-btn">
+          <span id="view-more-text">View more projects (5 remaining)</span>
+          <span class="material-symbols-outlined text-[18px] transition-transform duration-300" id="view-more-icon">expand_more</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 4. PUBLICATIONS AND RESEARCH DIRECTIONS    -->
+    <!-- ========================================== -->
+    <section class="w-full bg-surface-container-low py-space-3xl px-margin md:px-margin-tablet lg:px-margin-desktop border-y border-surface-container-high" id="publications">
+      <div class="max-w-[1280px] mx-auto space-y-space-2xl">
+        
+        <!-- Section Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md reveal-on-scroll">
+          <div class="space-y-space-xs max-w-2xl">
+            <span class="font-label-technical text-xs tracking-widest text-primary uppercase font-bold">Scholarship Index</span>
+            <h2 class="font-headline-lg text-3xl md:text-4xl text-on-surface">
+              Research and publications
+            </h2>
+            <p class="font-body-md text-sm md:text-base text-on-surface-variant font-light">
+              Peer-reviewed papers, book chapters, and graduate theses addressing applied AI, computer vision, and network security.
+            </p>
+          </div>
+          <a class="inline-flex items-center gap-space-xs font-label-code text-xs text-primary hover:underline font-semibold" href="https://scholar.google.com/citations?user=_ReNEy4AAAAJ" rel="noopener noreferrer" target="_blank">
+            <span>Explore full citation record on Google Scholar</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+          </a>
+        </div>
+
+        <!-- Publication Rows -->
+        <div class="space-y-space-sm">
+          
+          <!-- Paper 1 -->
+          <div class="bg-surface-container-lowest p-space-md md:p-space-lg rounded-xl border border-surface-container shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md card-hover-lift reveal-on-scroll">
+            <div class="space-y-space-xs max-w-3xl">
+              <div class="flex items-center gap-space-sm flex-wrap">
+                <span class="font-label-code text-xs text-primary font-bold">AIRC · 2025</span>
+                <span class="font-label-technical text-[10px] text-secondary uppercase bg-surface-container px-2 py-0.5 rounded font-semibold">Conference Paper</span>
+              </div>
+              <h3 class="font-headline-sm text-base md:text-lg text-on-surface font-semibold">
+                Empowering Circuit Prototyping with Generative AI: A Framework for Vision-Based Real-Time Code Generation and Adaptation
+              </h3>
+              <p class="font-body-sm text-xs md:text-sm text-on-surface-variant">
+                Nafeeul Alam Walee, Atef Shalan, Hayden Wimmer, Christopher Kadlec
+              </p>
+            </div>
+            <div class="shrink-0 self-start md:self-auto">
+              <a class="px-space-md py-space-xs bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface font-label-code text-xs rounded-md transition-colors inline-flex items-center gap-1 font-semibold" href="https://ieeexplore.ieee.org/abstract/document/11077546" rel="noopener noreferrer" target="_blank">
+                IEEE Xplore <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Paper 2 -->
+          <div class="bg-surface-container-lowest p-space-md md:p-space-lg rounded-xl border border-surface-container shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md card-hover-lift reveal-on-scroll delay-100">
+            <div class="space-y-space-xs max-w-3xl">
+              <div class="flex items-center gap-space-sm flex-wrap">
+                <span class="font-label-code text-xs text-primary font-bold">IEEE JSAC · 2025</span>
+                <span class="font-label-technical text-[10px] text-secondary uppercase bg-surface-container px-2 py-0.5 rounded font-semibold">Journal Article</span>
+              </div>
+              <h3 class="font-headline-sm text-base md:text-lg text-on-surface font-semibold">
+                Towards Intelligent Traffic Monitoring System Exploiting GANs-based Models For Real-Time UAV Data
+              </h3>
+              <p class="font-body-sm text-xs md:text-sm text-on-surface-variant">
+                IEEE Journal on Selected Areas in Communications (Under Publication Record)
+              </p>
+            </div>
+            <div class="shrink-0 self-start md:self-auto">
+              <a class="px-space-md py-space-xs bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface font-label-code text-xs rounded-md transition-colors inline-flex items-center gap-1 font-semibold" href="https://ieeexplore.ieee.org/abstract/document/11217385" rel="noopener noreferrer" target="_blank">
+                IEEE Xplore <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Paper 3 -->
+          <div class="bg-surface-container-lowest p-space-md md:p-space-lg rounded-xl border border-surface-container shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md card-hover-lift reveal-on-scroll">
+            <div class="space-y-space-xs max-w-3xl">
+              <div class="flex items-center gap-space-sm flex-wrap">
+                <span class="font-label-code text-xs text-primary font-bold">Springer CCIS · 2025</span>
+                <span class="font-label-technical text-[10px] text-secondary uppercase bg-surface-container px-2 py-0.5 rounded font-semibold">Book Chapter</span>
+              </div>
+              <h3 class="font-headline-sm text-base md:text-lg text-on-surface font-semibold">
+                Detecting Fake Accounts and Identifying Malicious URLs on Social Networks Using Deep Learning
+              </h3>
+              <p class="font-body-sm text-xs md:text-sm text-on-surface-variant">
+                Communications in Computer and Information Science, Springer Nature Switzerland
+              </p>
+            </div>
+            <div class="shrink-0 self-start md:self-auto">
+              <a class="px-space-md py-space-xs bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface font-label-code text-xs rounded-md transition-colors inline-flex items-center gap-1 font-semibold" href="https://link.springer.com/chapter/10.1007/978-3-031-86637-1_6" rel="noopener noreferrer" target="_blank">
+                Springer Link <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Paper 4 -->
+          <div class="bg-surface-container-lowest p-space-md md:p-space-lg rounded-xl border border-surface-container shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md card-hover-lift reveal-on-scroll delay-100">
+            <div class="space-y-space-xs max-w-3xl">
+              <div class="flex items-center gap-space-sm flex-wrap">
+                <span class="font-label-code text-xs text-primary font-bold">IEEE/ACIS BCD · 2024</span>
+                <span class="font-label-technical text-[10px] text-secondary uppercase bg-surface-container px-2 py-0.5 rounded font-semibold">Conference Paper</span>
+              </div>
+              <h3 class="font-headline-sm text-base md:text-lg text-on-surface font-semibold">
+                Optimizing Deep Learning Accuracy: Visibility Filtering Approach for Early Wildfire Detection in Forest Sensor Images
+              </h3>
+              <p class="font-body-sm text-xs md:text-sm text-on-surface-variant">
+                Big Data, Cloud Computing, and Data Science Engineering, IEEE
+              </p>
+            </div>
+            <div class="shrink-0 self-start md:self-auto">
+              <a class="px-space-md py-space-xs bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface font-label-code text-xs rounded-md transition-colors inline-flex items-center gap-1 font-semibold" href="https://ieeexplore.ieee.org/abstract/document/10743078" rel="noopener noreferrer" target="_blank">
+                IEEE Xplore <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Master's Thesis -->
+          <div class="bg-surface-container p-space-md md:p-space-lg rounded-xl border border-surface-container-high shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md card-hover-lift reveal-on-scroll">
+            <div class="space-y-space-xs max-w-3xl">
+              <div class="flex items-center gap-space-sm flex-wrap">
+                <span class="font-label-code text-xs text-secondary font-bold">Georgia Southern Univ · 2025</span>
+                <span class="font-label-technical text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded uppercase font-semibold">Master's Thesis</span>
+              </div>
+              <h3 class="font-headline-sm text-base md:text-lg text-on-surface font-semibold">
+                Enhancing AI-Driven Automation for Object Detection And Computer Vision
+              </h3>
+              <p class="font-body-sm text-xs md:text-sm text-on-surface-variant">
+                Electronic Theses and Dissertations, Jack N. Averitt College of Graduate Studies
+              </p>
+            </div>
+            <div class="shrink-0 self-start md:self-auto">
+              <a class="px-space-md py-space-xs bg-surface-container-highest hover:bg-primary hover:text-on-primary text-on-surface font-label-code text-xs rounded-md transition-colors inline-flex items-center gap-1 font-semibold" href="https://digitalcommons.georgiasouthern.edu/etd/" rel="noopener noreferrer" target="_blank">
+                Digital Commons <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Active Research Inquiries Subsection -->
+        <div class="bg-surface-container-lowest p-space-lg rounded-2xl border border-surface-container shadow-sm space-y-space-md reveal-on-scroll">
+          <div class="flex flex-col space-y-space-xs">
+            <span class="font-label-technical text-xs tracking-widest text-primary uppercase font-bold">Active Inquiries</span>
+            <h3 class="font-headline-md text-xl text-on-surface font-semibold">Ongoing Doctoral Research Directions</h3>
+            <p class="font-body-sm text-xs md:text-sm text-secondary">
+              Current investigations underway as part of doctoral studies in Applied Computing at Georgia Southern University.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md pt-space-xs">
+            <div class="p-space-md bg-surface-container-low rounded-xl border border-surface-container space-y-space-xs card-hover-lift">
+              <span class="font-label-code text-xs text-primary font-bold">[DIR 01]</span>
+              <h4 class="font-headline-sm text-sm font-semibold text-on-surface">Agentic AI in Zero Trust</h4>
+              <p class="font-body-sm text-xs text-on-surface-variant">Autonomous agents orchestrating adaptive access policies and real-time risk mitigation in Zero Trust networks.</p>
+            </div>
+            <div class="p-space-md bg-surface-container-low rounded-xl border border-surface-container space-y-space-xs card-hover-lift">
+              <span class="font-label-code text-xs text-primary font-bold">[DIR 02]</span>
+              <h4 class="font-headline-sm text-sm font-semibold text-on-surface">Behavioral Firewalls</h4>
+              <p class="font-body-sm text-xs text-on-surface-variant">Self-adapting rule synthesis reacting dynamically to anomalous cluster traffic and live zero-day patterns.</p>
+            </div>
+            <div class="p-space-md bg-surface-container-low rounded-xl border border-surface-container space-y-space-xs card-hover-lift">
+              <span class="font-label-code text-xs text-primary font-bold">[DIR 03]</span>
+              <h4 class="font-headline-sm text-sm font-semibold text-on-surface">Satellite Enhancement</h4>
+              <p class="font-body-sm text-xs text-on-surface-variant">GAN-driven super-resolution pipelines resolving atmospheric attenuation in earth observation feeds.</p>
+            </div>
+            <div class="p-space-md bg-surface-container-low rounded-xl border border-surface-container space-y-space-xs card-hover-lift">
+              <span class="font-label-code text-xs text-primary font-bold">[DIR 04]</span>
+              <h4 class="font-headline-sm text-sm font-semibold text-on-surface">Stream Anti-Spoofing</h4>
+              <p class="font-body-sm text-xs text-on-surface-variant">Lightweight presentation attack detection tailored for CPU-bound video conference streaming nodes.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 5. TEACHING SECTION                        -->
+    <!-- ========================================== -->
+    <section class="w-full py-space-3xl px-margin md:px-margin-tablet lg:px-margin-desktop max-w-[1280px] mx-auto" id="teaching">
+      <div class="space-y-space-2xl">
+        
+        <!-- Section Header -->
+        <div class="max-w-2xl space-y-space-xs reveal-on-scroll">
+          <span class="font-label-technical text-xs tracking-widest text-primary uppercase font-bold">Pedagogical Practice</span>
+          <h2 class="font-headline-lg text-3xl md:text-4xl text-on-surface">
+            Teaching the foundations. Connecting them to practice.
+          </h2>
+          <p class="font-body-md text-sm md:text-base text-on-surface-variant font-light">
+            I teach computing through clear conceptual framing, structured coursework, hands-on virtualized labs, and individualized mentoring.
+          </p>
+          <div class="pt-space-xs">
+            <span class="font-label-code text-xs text-secondary font-medium">
+              Georgia Southern University · Teaching Assistant II (Appointment began August 2025)
+            </span>
+          </div>
+        </div>
+
+        <!-- Two Core Teaching Panels -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-desktop">
+          
+          <!-- Panel 1: Cybersecurity -->
+          <div class="bg-surface-container-lowest p-space-xl rounded-2xl border border-surface-container-high shadow-sm space-y-space-md flex flex-col justify-between card-hover-lift reveal-on-scroll">
+            <div class="space-y-space-sm">
+              <div class="flex items-center justify-between">
+                <span class="font-label-code text-xs text-primary font-bold">UNDERGRADUATE CURRICULUM</span>
+                <span class="font-label-technical text-[10px] bg-surface-container px-2 py-0.5 rounded text-secondary uppercase font-semibold">Fall 2025 — Present</span>
+              </div>
+              <div>
+                <h3 class="font-headline-md text-xl text-on-surface font-semibold">Introduction to Cybersecurity</h3>
+                <span class="font-label-technical text-xs text-primary-container font-semibold block mt-1">Principal Instructor</span>
+              </div>
+              <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+                Guiding students through fundamental cybersecurity principles through structured lectures, hands-on packet inspection drills, virtualized NetLab infrastructure, and active lab guidance.
+              </p>
+            </div>
+            <div class="p-space-sm bg-surface-container-low rounded-lg space-y-1">
+              <span class="font-label-technical text-xs text-secondary uppercase font-bold block">Focus Areas</span>
+              <p class="font-body-sm text-xs text-on-surface-variant">
+                Threat vectors, symmetric/asymmetric cryptography, access controls, network packet analysis, and ethical vulnerability disclosure.
+              </p>
+            </div>
+          </div>
+
+          <!-- Panel 2: Web Design -->
+          <div class="bg-surface-container-lowest p-space-xl rounded-2xl border border-surface-container-high shadow-sm space-y-space-md flex flex-col justify-between card-hover-lift reveal-on-scroll delay-100">
+            <div class="space-y-space-sm">
+              <div class="flex items-center justify-between">
+                <span class="font-label-code text-xs text-primary font-bold">FOUNDATIONAL COMPUTING</span>
+                <span class="font-label-technical text-[10px] bg-surface-container px-2 py-0.5 rounded text-secondary uppercase font-semibold">GSU Academic Term</span>
+              </div>
+              <div>
+                <h3 class="font-headline-md text-xl text-on-surface font-semibold">Introduction to Web Design</h3>
+                <span class="font-label-technical text-xs text-primary-container font-semibold block mt-1">Instructor</span>
+              </div>
+              <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+                Teaching introductory web design principles, semantic DOM structuring, responsive layout systems, client-side browser dynamics, and web accessibility standards (WCAG).
+              </p>
+            </div>
+            <div class="p-space-sm bg-surface-container-low rounded-lg space-y-1">
+              <span class="font-label-technical text-xs text-secondary uppercase font-bold block">Focus Areas</span>
+              <p class="font-body-sm text-xs text-on-surface-variant">
+                Semantic HTML5, CSS Grid/Flexbox layout engines, responsive typography, and developer devtools workflows.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Documented Teaching Responsibilities Matrix -->
+        <div class="bg-surface-container-low p-space-lg rounded-2xl border border-surface-container-high shadow-sm space-y-space-md reveal-on-scroll">
+          <div class="space-y-1">
+            <span class="font-label-technical text-xs text-primary uppercase tracking-wider font-bold">Pedagogical Framework</span>
+            <h4 class="font-headline-sm text-lg text-on-surface font-semibold">Documented Teaching Contributions</h4>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md pt-space-xs">
+            <div class="flex items-start gap-space-sm p-2 rounded-lg hover:bg-surface-container transition-colors">
+              <span class="material-symbols-outlined text-primary text-[22px] mt-0.5">menu_book</span>
+              <div>
+                <span class="font-body-sm font-semibold text-on-surface block text-sm">Curriculum Preparation</span>
+                <p class="font-body-sm text-xs text-on-surface-variant">Preparing course materials, assignments, lab rubrics, quizzes, and formal term examinations.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-space-sm p-2 rounded-lg hover:bg-surface-container transition-colors">
+              <span class="material-symbols-outlined text-primary text-[22px] mt-0.5">co_present</span>
+              <div>
+                <span class="font-body-sm font-semibold text-on-surface block text-sm">Lecture Delivery</span>
+                <p class="font-body-sm text-xs text-on-surface-variant">Delivering technical lectures and actively facilitating student question sessions during class hours.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-space-sm p-2 rounded-lg hover:bg-surface-container transition-colors">
+              <span class="material-symbols-outlined text-primary text-[22px] mt-0.5">support_agent</span>
+              <div>
+                <span class="font-body-sm font-semibold text-on-surface block text-sm">Academic Guidance</span>
+                <p class="font-body-sm text-xs text-on-surface-variant">Providing one-on-one virtual office hours and in-person lab mentorship for computing students.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-space-sm p-2 rounded-lg hover:bg-surface-container transition-colors">
+              <span class="material-symbols-outlined text-primary text-[22px] mt-0.5">terminal</span>
+              <div>
+                <span class="font-body-sm font-semibold text-on-surface block text-sm">Lab Coordination &amp; NetLab</span>
+                <p class="font-body-sm text-xs text-on-surface-variant">Coordinating cybersecurity lab troubleshooting through NDG NetLab virtualized environment platforms.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-space-sm p-2 rounded-lg hover:bg-surface-container transition-colors">
+              <span class="material-symbols-outlined text-primary text-[22px] mt-0.5">lightbulb</span>
+              <div>
+                <span class="font-body-sm font-semibold text-on-surface block text-sm">Guest Lectures</span>
+                <p class="font-body-sm text-xs text-on-surface-variant">Delivering guest lectures on artificial intelligence, cybersecurity ethics, and emerging computing trends.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-space-sm p-2 rounded-lg hover:bg-surface-container transition-colors">
+              <span class="material-symbols-outlined text-primary text-[22px] mt-0.5">verified</span>
+              <div>
+                <span class="font-body-sm font-semibold text-on-surface block text-sm">Evaluation &amp; Feedback</span>
+                <p class="font-body-sm text-xs text-on-surface-variant">Constructive, timely grading with targeted guidance on programming logic and security best practices.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 6. PROFESSIONAL EXPERIENCE                 -->
+    <!-- ========================================== -->
+    <section class="w-full bg-surface-container-low py-space-3xl px-margin md:px-margin-tablet lg:px-margin-desktop border-y border-surface-container-high" id="experience">
+      <div class="max-w-[1280px] mx-auto space-y-space-2xl">
+        
+        <!-- Section Header -->
+        <div class="max-w-2xl space-y-space-xs reveal-on-scroll">
+          <span class="font-label-technical text-xs tracking-widest text-primary uppercase font-bold">Career History</span>
+          <h2 class="font-headline-lg text-3xl md:text-4xl text-on-surface">
+            Engineering experience that informs my research
+          </h2>
+          <p class="font-body-md text-sm md:text-base text-on-surface-variant font-light">
+            A track record spanning graduate research leadership, mobile architecture at fast-moving organizations, and production software deployment.
+          </p>
+        </div>
+
+        <!-- Experience Cards Timeline -->
+        <div class="space-y-space-sm">
+          
+          <!-- Role 1: Graduate Research Assistant -->
+          <div class="bg-surface-container-lowest p-space-lg rounded-xl border border-surface-container shadow-sm flex flex-col md:flex-row md:items-start justify-between gap-space-md card-hover-lift reveal-on-scroll">
+            <div class="space-y-space-xs max-w-3xl">
+              <div class="flex items-center gap-space-sm flex-wrap">
+                <h3 class="font-headline-sm text-lg text-on-surface font-semibold">Graduate Research Assistant</h3>
+                <span class="font-label-technical text-xs text-primary font-bold bg-surface-container px-2 py-0.5 rounded">Georgia Southern University</span>
+              </div>
+              <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+                Collaborated on AI-focused research, presented empirical findings at symposia, supported undergraduate lab learning, and deployed prototype microservices using AWS EC2 and Firebase.
+              </p>
+            </div>
+            <div class="shrink-0 font-label-code text-xs text-secondary font-medium">
+              August 2023 – May 2025
+            </div>
+          </div>
+
+          <!-- Role 2: Systems Developer -->
+          <div class="bg-surface-container-lowest p-space-lg rounded-xl border border-surface-container shadow-sm flex flex-col md:flex-row md:items-start justify-between gap-space-md card-hover-lift reveal-on-scroll">
+            <div class="space-y-space-xs max-w-3xl">
+              <div class="flex items-center gap-space-sm flex-wrap">
+                <h3 class="font-headline-sm text-lg text-on-surface font-semibold">Systems Developer</h3>
+                <span class="font-label-technical text-xs text-primary font-bold bg-surface-container px-2 py-0.5 rounded">Georgia Southern University</span>
+              </div>
+              <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+                Contributed to core software development, image pipeline testing, and camera sensor benchmark suites for early wildfire detection.
+              </p>
+            </div>
+            <div class="shrink-0 font-label-code text-xs text-secondary font-medium">
+              May 2024 – July 2024
+            </div>
+          </div>
+
+          <!-- Role 3: Software Engineer - Monocle -->
+          <div class="bg-surface-container-lowest p-space-lg rounded-xl border border-surface-container shadow-sm flex flex-col md:flex-row md:items-start justify-between gap-space-md card-hover-lift reveal-on-scroll">
+            <div class="space-y-space-xs max-w-3xl">
+              <div class="flex items-center gap-space-sm flex-wrap">
+                <h3 class="font-headline-sm text-lg text-on-surface font-semibold">Software Engineer</h3>
+                <span class="font-label-technical text-xs text-primary font-bold bg-surface-container px-2 py-0.5 rounded">Monocle</span>
+              </div>
+              <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+                Worked on cross-platform mobile application performance, rendering pipeline tuning, and reading feature refinement. Collaborated with product designers in active Agile sprints.
+              </p>
+            </div>
+            <div class="shrink-0 font-label-code text-xs text-secondary font-medium">
+              September 2021 – July 2023
+            </div>
+          </div>
+
+          <!-- Role 4: Software Engineer - Long Software LLC -->
+          <div class="bg-surface-container-lowest p-space-lg rounded-xl border border-surface-container shadow-sm flex flex-col md:flex-row md:items-start justify-between gap-space-md card-hover-lift reveal-on-scroll">
+            <div class="space-y-space-xs max-w-3xl">
+              <div class="flex items-center gap-space-sm flex-wrap">
+                <h3 class="font-headline-sm text-lg text-on-surface font-semibold">Software Engineer</h3>
+                <span class="font-label-technical text-xs text-primary font-bold bg-surface-container px-2 py-0.5 rounded">Long Software LLC</span>
+              </div>
+              <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+                Developed production Flutter applications and cloud-connected functionality using Firebase Cloud Functions, Node.js microservices, REST APIs, and Google Maps integrations.
+              </p>
+            </div>
+            <div class="shrink-0 font-label-code text-xs text-secondary font-medium">
+              August 2021 – July 2023
+            </div>
+          </div>
+
+          <!-- Role 5: Mobile Application Developer - AndIT -->
+          <div class="bg-surface-container-lowest p-space-lg rounded-xl border border-surface-container shadow-sm flex flex-col md:flex-row md:items-start justify-between gap-space-md card-hover-lift reveal-on-scroll">
+            <div class="space-y-space-xs max-w-3xl">
+              <div class="flex items-center gap-space-sm flex-wrap">
+                <h3 class="font-headline-sm text-lg text-on-surface font-semibold">Mobile Application Developer</h3>
+                <span class="font-label-technical text-xs text-primary font-bold bg-surface-container px-2 py-0.5 rounded">AndIT</span>
+              </div>
+              <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+                Developed native &amp; hybrid mobile applications, local storage synchronization, and secure OAuth authentication workflows.
+              </p>
+            </div>
+            <div class="shrink-0 font-label-code text-xs text-secondary font-medium">
+              January 2020 – June 2021
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 7. ABOUT, EDUCATION, AND RECOGNITION       -->
+    <!-- ========================================== -->
+    <section class="w-full py-space-3xl px-margin md:px-margin-tablet lg:px-margin-desktop max-w-[1280px] mx-auto" id="about">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop">
+        
+        <!-- Left Column: Biography -->
+        <div class="lg:col-span-7 space-y-space-lg reveal-on-scroll">
+          <div class="space-y-space-xs">
+            <span class="font-label-technical text-xs tracking-widest text-primary uppercase font-bold">Biography</span>
+            <h2 class="font-headline-lg text-3xl md:text-4xl text-on-surface">
+              A researcher with an engineering foundation
+            </h2>
+          </div>
+          <div class="space-y-space-md font-body-md text-sm md:text-base text-on-surface-variant font-light leading-relaxed">
+            <p>
+              I am a PhD student in Applied Computing at Georgia Southern University, working at the intersection of generative artificial intelligence, computer vision, and cybersecurity. My research is grounded in the conviction that intelligent models must survive the messy constraints of real-world computing environments.
+            </p>
+            <p>
+              Before beginning doctoral studies, I completed an M.S. in Information Technology with a <strong class="text-on-surface font-semibold">4.0 GPA</strong> at Georgia Southern University and worked as a software engineer delivering production mobile applications. This dual perspective enables me to formulate research questions that speak directly to system reliability, token efficiency, and edge execution.
+            </p>
+            <p>
+              As an educator, I currently serve as Teaching Assistant II, leading undergraduate coursework in cybersecurity and web design. I believe that rigorous academic inquiry and practical software craftsmanship reinforce each other.
+            </p>
+          </div>
+
+          <!-- Research Philosophy Callout -->
+          <div class="p-space-md bg-surface-container-low rounded-xl border border-surface-container flex items-start gap-space-sm card-hover-lift">
+            <span class="material-symbols-outlined text-primary text-[24px]">verified_user</span>
+            <div class="space-y-0.5">
+              <span class="font-body-sm font-semibold text-on-surface block text-sm">Scientific Integrity &amp; Open Systems</span>
+              <p class="font-body-sm text-xs text-on-surface-variant leading-relaxed">
+                Every system prototype is accompanied by verifiable benchmark methodologies, clear error metrics, and production-tested software frameworks.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Education & Recognition -->
+        <div class="lg:col-span-5 space-y-space-xl reveal-on-scroll delay-100">
+          
+          <!-- Education Stack -->
+          <div class="space-y-space-md">
+            <span class="font-label-technical text-xs tracking-widest text-primary uppercase font-bold block">Education</span>
+            <div class="space-y-space-sm">
+              <!-- PhD -->
+              <div class="bg-surface-container-low p-space-md rounded-xl border border-surface-container shadow-sm space-y-1 card-hover-lift">
+                <span class="font-label-code text-xs text-primary font-bold">2025 – PRESENT</span>
+                <h4 class="font-headline-sm text-base text-on-surface font-semibold">PhD in Applied Computing</h4>
+                <p class="font-body-sm text-xs text-on-surface-variant">Georgia Southern University · Statesboro, GA</p>
+                <span class="font-label-code text-[11px] text-secondary block">Doctoral Researcher</span>
+              </div>
+              <!-- M.S. -->
+              <div class="bg-surface-container-low p-space-md rounded-xl border border-surface-container shadow-sm space-y-1 card-hover-lift">
+                <div class="flex items-center justify-between">
+                  <span class="font-label-code text-xs text-primary font-bold">2023 – 2025</span>
+                  <span class="font-label-code text-xs bg-primary text-on-primary px-2 py-0.5 rounded font-semibold">GPA 4.0 / 4.0</span>
+                </div>
+                <h4 class="font-headline-sm text-base text-on-surface font-semibold">M.S. in Information Technology</h4>
+                <p class="font-body-sm text-xs text-on-surface-variant">Georgia Southern University · Statesboro, GA</p>
+                <span class="font-label-code text-[11px] text-secondary block">Jack N. Averitt College of Graduate Studies</span>
+              </div>
+              <!-- B.S. -->
+              <div class="bg-surface-container-low p-space-md rounded-xl border border-surface-container shadow-sm space-y-1 card-hover-lift">
+                <span class="font-label-code text-xs text-primary font-bold">2015 – 2019</span>
+                <h4 class="font-headline-sm text-base text-on-surface font-semibold">Bachelor’s Degree in Computer Science</h4>
+                <p class="font-body-sm text-xs text-on-surface-variant">North Western University · Khulna, Bangladesh</p>
+                <span class="font-label-code text-[11px] text-secondary block">Undergraduate Studies</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Awards & Recognition -->
+          <div class="space-y-space-md">
+            <span class="font-label-technical text-xs tracking-widest text-primary uppercase font-bold block">Honors &amp; Recognition</span>
+            <div class="space-y-space-xs">
+              <!-- Award 1 -->
+              <div class="p-space-sm bg-surface-container rounded-lg flex items-start gap-space-sm card-hover-lift">
+                <span class="material-symbols-outlined text-primary text-[22px] mt-0.5">military_tech</span>
+                <div class="space-y-0.5">
+                  <span class="font-body-sm font-semibold text-on-surface block text-sm">Averitt Award for Excellence in Research</span>
+                  <p class="font-body-sm text-xs text-on-surface-variant">Georgia Southern University · April 2025</p>
+                </div>
+              </div>
+              <!-- Award 2 -->
+              <div class="p-space-sm bg-surface-container rounded-lg flex items-start gap-space-sm card-hover-lift">
+                <span class="material-symbols-outlined text-primary text-[22px] mt-0.5">trophy</span>
+                <div class="space-y-0.5">
+                  <span class="font-body-sm font-semibold text-on-surface block text-sm">First Place, Gulfstream — Best Research in IT</span>
+                  <p class="font-body-sm text-xs text-on-surface-variant">GSU Research Symposium · April 2024</p>
+                </div>
+              </div>
+              <!-- Award 3 -->
+              <div class="p-space-sm bg-surface-container rounded-lg flex items-start gap-space-sm card-hover-lift">
+                <span class="material-symbols-outlined text-primary text-[22px] mt-0.5">award_star</span>
+                <div class="space-y-0.5">
+                  <span class="font-body-sm font-semibold text-on-surface block text-sm">Second Place, SALT — Computing Awards</span>
+                  <p class="font-body-sm text-xs text-on-surface-variant">GSU Research Symposium · April 2024</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 8. TECHNICAL TOOLKIT                       -->
+    <!-- ========================================== -->
+    <section class="w-full bg-surface-container-low py-space-3xl px-margin md:px-margin-tablet lg:px-margin-desktop border-y border-surface-container-high" id="toolkit">
+      <div class="max-w-[1280px] mx-auto space-y-space-2xl">
+        
+        <!-- Section Header -->
+        <div class="max-w-2xl space-y-space-xs reveal-on-scroll">
+          <span class="font-label-technical text-xs tracking-widest text-primary uppercase font-bold">Instrument Stack</span>
+          <h2 class="font-headline-lg text-3xl md:text-4xl text-on-surface">
+            Tools I use to investigate and build
+          </h2>
+          <p class="font-body-md text-sm md:text-base text-on-surface-variant font-light">
+            A disciplined synthesis of deep learning environments, mobile application frameworks, and production cloud infrastructure.
+          </p>
+        </div>
+
+        <!-- 4 Grouped Toolkit Rows -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+          
+          <!-- Group 1: AI & Computer Vision -->
+          <div class="bg-surface-container-lowest p-space-lg rounded-2xl border border-surface-container shadow-sm space-y-space-sm card-hover-lift reveal-on-scroll">
+            <div class="flex items-center gap-space-xs">
+              <span class="material-symbols-outlined text-primary text-[22px]">psychology</span>
+              <h3 class="font-headline-sm text-base text-on-surface font-semibold">AI &amp; Computer Vision</h3>
+            </div>
+            <div class="flex flex-wrap gap-2 pt-space-xs">
+              <span class="px-space-sm py-1 bg-surface-container text-on-surface font-label-code text-xs rounded hover:bg-primary hover:text-white transition-colors cursor-default">Python</span>
+              <span class="px-space-sm py-1 bg-surface-container text-on-surface font-label-code text-xs rounded hover:bg-primary hover:text-white transition-colors cursor-default">TensorFlow</span>
+              <span class="px-space-sm py-1 bg-surface-container text-on-surface font-label-code text-xs rounded hover:bg-primary hover:text-white transition-colors cursor-default">Keras</span>
+              <span class="px-space-sm py-1 bg-surface-container text-on-surface font-label-code text-xs rounded hover:bg-primary hover:text-white transition-colors cursor-default">scikit-learn</span>
+              <span class="px-space-sm py-1 bg-surface-container text-on-surface font-label-code text-xs rounded hover:bg-primary hover:text-white transition-colors cursor-default">OpenCV</span>
+              <span class="px-space-sm py-1 bg-primary text-on-primary font-label-code text-xs rounded font-semibold">OpenAI Models</span>
+            </div>
+          </div>
+
+          <!-- Group 2: Mobile & Application Development -->
+          <div class="bg-surface-container-lowest p-space-lg rounded-2xl border border-surface-container shadow-sm space-y-space-sm card-hover-lift reveal-on-scroll delay-100">
+            <div class="flex items-center gap-space-xs">
+              <span class="material-symbols-outlined text-primary text-[22px]">devices</span>
+              <h3 class="font-headline-sm text-base text-on-surface font-semibold">Mobile &amp; Application Development</h3>
+            </div>
+            <div class="flex flex-wrap gap-2 pt-space-xs">
+              <span class="px-space-sm py-1 bg-surface-container text-on-surface font-label-code text-xs rounded hover:bg-primary hover:text-white transition-colors cursor-default">Flutter</span>
+              <span class="px-space-sm py-1 bg-surface-container text-on-surface font-label-code text-xs rounded hover:bg-primary hover:text-white transition-colors cursor-default">Dart</span>
+              <span class="px-space-sm py-1 bg-surface-container text-on-surface font-label-code text-xs rounded hover:bg-primary hover:text-white transition-colors cursor-default">Java</span>
+              <span class="px-space-sm py-1 bg-surface-container text-on-surface font-label-code text-xs rounded hover:bg-primary hover:text-white transition-colors cursor-default">JavaScript</span>
+              <span class="px-space-sm py-1 bg-surface-container text-on-surface font-label-code text-xs rounded hover:bg-primary hover:text-white transition-colors cursor-default">Node.js</span>
+            </div>
+          </div>
+
+          <!-- Group 3: Cloud, Data & APIs -->
+          <div class="bg-surface-container-lowest p-space-lg rounded-2xl border border-surface-container shadow-sm space-y-space-sm card-hover-lift reveal-on-scroll">
+            <div class="flex items-center gap-space-xs">
+              <span class="material-symbols-outlined text-primary text-[22px]">cloud</span>
+              <h3 class="font-headline-sm text-base text-on-surface font-semibold">Cloud, Data &amp; APIs</h3>
+            </div>
+            <div class="flex flex-wrap gap-2 pt-space-xs">
+              <span class="px-space-sm py-1 bg-surface-container text-on-surface font-label-code text-xs rounded hover:bg-primary hover:text-white transition-colors cursor-default">Firebase</span>
+              <span class="px-space-sm py-1 bg-surface-container text-on-surface font-label-code text-xs rounded hover:bg-primary hover:text-white transition-colors cursor-default">Cloud Functions</span>
+              <span class="px-space-sm py-1 bg-surface-container text-on-surface font-label-code text-xs rounded hover:bg-primary hover:text-white transition-colors cursor-default">AWS EC2</span>
+              <span class="px-space-sm py-1 bg-surface-container text-on-surface font-label-code text-xs rounded hover:bg-primary hover:text-white transition-colors cursor-default">MySQL</span>
+              <span class="px-space-sm py-1 bg-surface-container text-on-surface font-label-code text-xs rounded hover:bg-primary hover:text-white transition-colors cursor-default">MongoDB</span>
+              <span class="px-space-sm py-1 bg-surface-container text-on-surface font-label-code text-xs rounded hover:bg-primary hover:text-white transition-colors cursor-default">REST APIs</span>
+              <span class="px-space-sm py-1 bg-surface-container text-on-surface font-label-code text-xs rounded hover:bg-primary hover:text-white transition-colors cursor-default">GraphQL</span>
+            </div>
+          </div>
+
+          <!-- Group 4: Development Workflow -->
+          <div class="bg-surface-container-lowest p-space-lg rounded-2xl border border-surface-container shadow-sm space-y-space-sm card-hover-lift reveal-on-scroll delay-100">
+            <div class="flex items-center gap-space-xs">
+              <span class="material-symbols-outlined text-primary text-[22px]">hub</span>
+              <h3 class="font-headline-sm text-base text-on-surface font-semibold">Development Workflow</h3>
+            </div>
+            <div class="flex flex-wrap gap-2 pt-space-xs">
+              <span class="px-space-sm py-1 bg-surface-container text-on-surface font-label-code text-xs rounded hover:bg-primary hover:text-white transition-colors cursor-default">GitHub</span>
+              <span class="px-space-sm py-1 bg-surface-container text-on-surface font-label-code text-xs rounded hover:bg-primary hover:text-white transition-colors cursor-default">Bitbucket</span>
+              <span class="px-space-sm py-1 bg-surface-container text-on-surface font-label-code text-xs rounded hover:bg-primary hover:text-white transition-colors cursor-default">Jupyter</span>
+              <span class="px-space-sm py-1 bg-surface-container text-on-surface font-label-code text-xs rounded hover:bg-primary hover:text-white transition-colors cursor-default">Google Colab</span>
+              <span class="px-space-sm py-1 bg-surface-container text-on-surface font-label-code text-xs rounded hover:bg-primary hover:text-white transition-colors cursor-default">Figma</span>
+              <span class="px-space-sm py-1 bg-surface-container text-on-surface font-label-code text-xs rounded hover:bg-primary hover:text-white transition-colors cursor-default">Jira</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 9. CONTACT & VERIFICATION NOTES           -->
+    <!-- ========================================== -->
+    <section class="w-full py-space-3xl px-margin md:px-margin-tablet lg:px-margin-desktop max-w-[1280px] mx-auto" id="contact">
+      <div class="space-y-space-2xl">
+        
+        <!-- Contact Card Container -->
+        <div class="bg-on-surface text-surface p-space-xl md:p-space-2xl rounded-3xl shadow-2xl flex flex-col md:flex-row md:items-center justify-between gap-space-xl reveal-on-scroll">
+          <div class="space-y-space-sm max-w-xl">
+            <span class="font-label-technical text-xs tracking-widest text-primary-fixed uppercase font-bold">Direct Communication</span>
+            <h2 class="font-headline-lg text-3xl md:text-4xl text-surface-bright font-display">
+              Let’s connect research with practical impact.
+            </h2>
+            <p class="font-body-lg text-sm md:text-base text-surface-variant font-light leading-relaxed">
+              I welcome conversations about AI research, cybersecurity, teaching, and software development collaborations.
+            </p>
+            <div class="pt-space-xs">
+              <span class="font-label-code text-xs md:text-sm text-surface-container-high">nafeewalee@gmail.com · Statesboro, GA</span>
+            </div>
+          </div>
+          <div class="flex flex-col sm:flex-row md:flex-col gap-space-sm shrink-0">
+            <a class="px-space-xl py-space-md bg-primary-container text-on-primary-container font-body-sm font-semibold rounded-xl hover:bg-white hover:text-on-surface transition-all text-center inline-flex items-center justify-center gap-space-xs shadow-lg hover:shadow-2xl" href="mailto:nafeewalee@gmail.com">
+              <span>Send an email</span>
+              <span class="material-symbols-outlined text-[18px]">send</span>
+            </a>
+            <div class="flex items-center justify-center gap-space-md text-surface-variant font-label-code text-xs pt-2">
+              <a class="hover:text-primary-fixed transition-colors hover:underline" href="https://www.linkedin.com/in/nafeewalee/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+              <span class="text-tertiary">/</span>
+              <a class="hover:text-primary-fixed transition-colors hover:underline" href="https://github.com/NafeeWalee" rel="noopener noreferrer" target="_blank">GitHub</a>
+              <span class="text-tertiary">/</span>
+              <a class="hover:text-primary-fixed transition-colors hover:underline" href="https://scholar.google.com/citations?user=_ReNEy4AAAAJ" rel="noopener noreferrer" target="_blank">Scholar</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Discrete Collapsible Verification Drawer -->
+        <div class="bg-surface-container-low rounded-2xl p-space-md border border-surface-container-high shadow-sm reveal-on-scroll">
+          <button class="w-full flex items-center justify-between text-left group" id="toggle-verification-btn">
+            <div class="flex items-center gap-space-xs">
+              <span class="material-symbols-outlined text-secondary text-[18px] group-hover:text-primary transition-colors">folder_managed</span>
+              <span class="font-label-technical text-xs text-secondary group-hover:text-primary transition-colors uppercase tracking-wider font-semibold">
+                Design &amp; Archival Verification Notes
+              </span>
+            </div>
+            <span class="material-symbols-outlined text-secondary text-[20px] transition-transform duration-300" id="verification-icon">expand_more</span>
+          </button>
+          <div class="hidden pt-space-md space-y-space-sm text-secondary font-label-code text-xs" id="verification-drawer">
+            <p class="leading-relaxed">
+              <span class="text-primary font-bold">[01] Accepted Manuscripts Status:</span> Additional accepted research works—including BIoMT-VFL (Blockchain-empowered Internet of Medical Things Vertical Federated Learning), CPU-optimized deepfake detection via lightweight CNN architectures, and non-invasive blood glucose federated learning systems—are tracked internally and will be reflected upon final IEEE/ACM digital library indexation.
+            </p>
+            <p class="leading-relaxed">
+              <span class="text-primary font-bold">[02] Archival Fidelity:</span> All conference listings, thesis repositories, GPA metrics, and employment roles are maintained in accordance with institutional verification standards at Georgia Southern University.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================== -->
+  <!-- FOOTER                                     -->
+  <!-- ========================================== -->
+  <footer class="w-full bg-surface-container-low border-t border-surface-container-high">
+    <div class="max-w-[1280px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-space-2xl">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-desktop">
+        
+        <div class="md:col-span-5 flex flex-col gap-space-sm">
+          <span class="font-label-technical text-xs uppercase tracking-wider text-secondary font-semibold">Archival Index · Dossier 01</span>
+          <h3 class="font-headline-md text-xl text-on-surface font-semibold">Nafeeul Alam Walee</h3>
+          <p class="font-body-sm text-xs md:text-sm text-on-surface-variant max-w-md leading-relaxed">
+            Doctoral Researcher exploring distributed systems, resilient architectures, and computational modeling at Georgia Southern University. Translating theory into production-grade systems.
+          </p>
+          <div class="pt-space-sm">
+            <span class="font-label-code text-xs text-secondary">Statesboro, GA · Allen E. Paulson College of Engineering and Computing</span>
+          </div>
+        </div>
+
+        <div class="md:col-span-3 flex flex-col gap-space-xs">
+          <span class="font-label-technical text-xs uppercase tracking-wider text-secondary font-semibold mb-space-xs">Scholarly Nodes</span>
+          <a class="font-body-sm text-xs text-on-surface-variant hover:text-primary transition-colors flex items-center gap-space-xs py-1" href="https://scholar.google.com/citations?user=_ReNEy4AAAAJ" rel="noopener noreferrer" target="_blank">
+            <span class="font-label-code text-primary font-semibold">[01]</span> Google Scholar
+          </a>
+          <a class="font-body-sm text-xs text-on-surface-variant hover:text-primary transition-colors flex items-center gap-space-xs py-1" href="https://github.com/NafeeWalee" rel="noopener noreferrer" target="_blank">
+            <span class="font-label-code text-primary font-semibold">[02]</span> GitHub Repository
+          </a>
+          <a class="font-body-sm text-xs text-on-surface-variant hover:text-primary transition-colors flex items-center gap-space-xs py-1" href="https://www.linkedin.com/in/nafeewalee/" rel="noopener noreferrer" target="_blank">
+            <span class="font-label-code text-primary font-semibold">[03]</span> LinkedIn Network
+          </a>
+          <a class="font-body-sm text-xs text-on-surface-variant hover:text-primary transition-colors flex items-center gap-space-xs py-1" href="mailto:nafeewalee@gmail.com">
+            <span class="font-label-code text-primary font-semibold">[04]</span> Institutional Dispatch
+          </a>
+        </div>
+
+        <div class="md:col-span-4 flex flex-col justify-between gap-space-md">
+          <div class="flex flex-col gap-space-xs">
+            <span class="font-label-technical text-xs uppercase tracking-wider text-secondary font-semibold mb-space-xs">System Footnote</span>
+            <p class="font-label-code text-xs text-on-surface-variant leading-relaxed">
+              Typography balanced with Playfair Display, Manrope, and JetBrains Mono. Built with zero-shadow modular wireframes and editorial grid disciplines.
+            </p>
+          </div>
+          <div class="flex items-center justify-between pt-space-md border-t border-surface-container">
+            <span class="font-label-technical text-xs text-secondary">© <span id="current-year"></span> Nafeeul Alam Walee</span>
+            <span class="font-label-technical text-xs text-primary font-semibold uppercase">Georgia Southern Univ</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================== -->
+  <!-- JAVASCRIPT: ANIMATIONS & INTERACTIONS      -->
+  <!-- ========================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Auto-set current year
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+
+      // 1. Mobile Menu Toggle
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileNav = document.getElementById('mobile-nav');
+      const mobileIcon = document.getElementById('mobile-menu-icon');
+      const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+      if (mobileBtn && mobileNav) {
+        mobileBtn.addEventListener('click', () => {
+          const isHidden = mobileNav.classList.contains('hidden');
+          if (isHidden) {
+            mobileNav.classList.remove('hidden');
+            mobileIcon.textContent = 'close';
+          } else {
+            mobileNav.classList.add('hidden');
+            mobileIcon.textContent = 'menu';
+          }
+        });
+
+        mobileLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobileNav.classList.add('hidden');
+            mobileIcon.textContent = 'menu';
+          });
+        });
+      }
+
+      // 2. Intersection Observer for Scroll Reveal Animations
+      const revealElements = document.querySelectorAll('.reveal-on-scroll');
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-revealed');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.12,
+          rootMargin: '0px 0px -40px 0px'
+        });
+
+        revealElements.forEach(el => observer.observe(el));
+      } else {
+        // Fallback for older browsers
+        revealElements.forEach(el => el.classList.add('is-revealed'));
+      }
+
+      // 3. Active Nav Link on Scroll (Spy)
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      window.addEventListener('scroll', () => {
+        let currentSectionId = '';
+        const scrollPosition = window.scrollY + 120;
+
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            currentSectionId = section.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.remove('active-nav', 'text-primary');
+          if (link.getAttribute('href') === `#${currentSectionId}`) {
+            link.classList.add('active-nav', 'text-primary');
+          }
+        });
+      });
+
+      // 4. Architecture Drawer Toggle
+      const toggleArchBtn = document.getElementById('toggle-architecture-btn');
+      const archDetail = document.getElementById('architecture-detail');
+      const toggleArchText = document.getElementById('toggle-arch-text');
+      const toggleArchIcon = document.getElementById('toggle-arch-icon');
+
+      if (toggleArchBtn && archDetail) {
+        toggleArchBtn.addEventListener('click', () => {
+          const isHidden = archDetail.classList.contains('hidden');
+          if (isHidden) {
+            archDetail.classList.remove('hidden');
+            toggleArchText.textContent = 'Hide architecture notes';
+            if (toggleArchIcon) toggleArchIcon.textContent = 'expand_less';
+          } else {
+            archDetail.classList.add('hidden');
+            toggleArchText.textContent = 'Explore the approach';
+            if (toggleArchIcon) toggleArchIcon.textContent = 'expand_more';
+          }
+        });
+      }
+
+      // 5. Project Filtering Tabs (All, Research, Software)
+      const filterTabs = document.querySelectorAll('.filter-tab');
+      const projectItems = document.querySelectorAll('.project-item');
+      let currentFilter = 'all';
+
+      filterTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+          currentFilter = this.getAttribute('data-filter');
+
+          // Reset all tabs
+          filterTabs.forEach(t => {
+            t.className = 'filter-tab px-space-md py-space-xs rounded-md font-label-technical text-xs uppercase tracking-wider text-secondary hover:text-on-surface transition-all';
+          });
+          // Highlight active tab
+          this.className = 'filter-tab px-space-md py-space-xs rounded-md font-label-technical text-xs uppercase tracking-wider transition-all bg-primary text-on-primary shadow-sm';
+
+          applyProjectVisibility();
+        });
+      });
+
+      // 6. View More Projects Button
+      const viewMoreBtn = document.getElementById('view-more-projects-btn');
+      const viewMoreText = document.getElementById('view-more-text');
+      const viewMoreIcon = document.getElementById('view-more-icon');
+      let isExpanded = false;
+
+      if (viewMoreBtn) {
+        viewMoreBtn.addEventListener('click', () => {
+          isExpanded = !isExpanded;
+          if (isExpanded) {
+            viewMoreText.textContent = 'Show fewer projects';
+            viewMoreIcon.textContent = 'expand_less';
+          } else {
+            viewMoreText.textContent = 'View more projects (5 remaining)';
+            viewMoreIcon.textContent = 'expand_more';
+          }
+          applyProjectVisibility();
+        });
+      }
+
+      function applyProjectVisibility() {
+        projectItems.forEach(item => {
+          const itemCat = item.getAttribute('data-category');
+          const isExtra = item.classList.contains('extra-project');
+          const matchesFilter = (currentFilter === 'all' || itemCat === currentFilter);
+
+          if (!matchesFilter) {
+            item.classList.add('hidden');
+          } else {
+            if (isExtra && !isExpanded) {
+              item.classList.add('hidden');
+            } else {
+              item.classList.remove('hidden');
+              item.classList.add('is-revealed');
+            }
+          }
+        });
+      }
+
+      // 7. Verification Notes Drawer Toggle
+      const toggleVerifBtn = document.getElementById('toggle-verification-btn');
+      const verifDrawer = document.getElementById('verification-drawer');
+      const verifIcon = document.getElementById('verification-icon');
+
+      if (toggleVerifBtn && verifDrawer) {
+        toggleVerifBtn.addEventListener('click', () => {
+          const isHidden = verifDrawer.classList.contains('hidden');
+          if (isHidden) {
+            verifDrawer.classList.remove('hidden');
+            verifIcon.textContent = 'expand_less';
+          } else {
+            verifDrawer.classList.add('hidden');
+            verifIcon.textContent = 'expand_more';
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
